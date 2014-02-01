@@ -7,6 +7,23 @@
 //
 
 #include <stdio.h>
+#include <objc/objc.h>
+//#include "demo.c"
+
+void sayHi(char *student, char *course, int days){
+    printf("%s has done as much %s programming as I could do in %d days!", student, course, days);
+}
+
+void singFor(int numberOfButtles)
+{
+    if (numberOfButtles == 0) {
+        printf("this is no buttles on the wall\n");
+    }else{
+        printf("%d is the number of butles on the wall\n. %d bottles on the wall\n", numberOfButtles, numberOfButtles);
+        int less = numberOfButtles - 1;
+        singFor(less);
+    }
+}
 
 int main(int argc, const char * argv[])
 {
@@ -27,6 +44,9 @@ int main(int argc, const char * argv[])
     printf("this is %f:\n", w);
     float timeOfCooking =  w * 12.3;
     printf("time for cooking: %f\t\t minutes\n", timeOfCooking);
+//    BOOL isNotEqual = 1 < 3;
+    sayHi("Perter", "Griffin", 23);
+    singFor(10);
     return 0;
 }
 
